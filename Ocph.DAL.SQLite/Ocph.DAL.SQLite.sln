@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.168
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ocph.DAL.SQLite", "Ocph.DAL.SQLite\Ocph.DAL.SQLite.csproj", "{C7E7D669-4546-41C4-B0A8-B1751169AFC1}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "SQLiteSource", "SQLiteSource\SQLiteSource.shproj", "{35325478-5AA8-4695-84FB-F67A74B47B96}"
+EndProject
+Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		SQLiteSource\SQLiteSource.projitems*{35325478-5aa8-4695-84fb-f67a74b47b96}*SharedItemsImports = 13
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C7E7D669-4546-41C4-B0A8-B1751169AFC1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7E7D669-4546-41C4-B0A8-B1751169AFC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7E7D669-4546-41C4-B0A8-B1751169AFC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7E7D669-4546-41C4-B0A8-B1751169AFC1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7AF3DD86-FB9C-4594-86DE-622CEDBEF7C4}
+	EndGlobalSection
+EndGlobal
