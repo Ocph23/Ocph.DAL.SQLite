@@ -141,11 +141,11 @@ namespace Ocph.DAL.Provider.SQLite
             List<T> list = new List<T>();
             StringBuilder sb = new StringBuilder();
 
-            sb.Append("(Select * From ").Append(Entity.TableName).Append(" Where ");
+            sb.Append("Select * From ").Append(Entity.TableName).Append(" Where ");
 
             sb.Append(new WhereTranslator().Translate(expression));
 
-            sb.Append(")");
+            sb.Append("");
             IDbCommand cmd = connection.CreateCommand();
             cmd.CommandType = CommandType.Text;
             cmd.CommandText = sb.ToString();

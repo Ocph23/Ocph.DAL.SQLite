@@ -19,6 +19,7 @@ namespace Ocph.DAL.Mapping.SQLite
         }
         public List<T> MappingWithoutInclud<T>(IDataReader dr)
         {
+            ReaderSchema = MappingCommon.ReadColumnInfo(dr.GetSchemaTable());
             List<T> list = new List<T>();
             while (dr.Read())
             {

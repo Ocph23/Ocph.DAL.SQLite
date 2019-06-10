@@ -18,7 +18,7 @@ namespace Ocph.DAL.Mapping.SQLite
                 ColumnInfo mr = new ColumnInfo();
                 object[] info = row.ItemArray;
                 mr.ColumnName = info[0].ToString();
-                mr.Ordinal = ((Int32)info[1] - 1);
+                mr.Ordinal = ((Int32)info[1]);
                 mr.ColumnSize = (Int32)info[2];
                 mr.IsUnique = (bool)info[5];
                 mr.IsKey = (bool)info[6];
