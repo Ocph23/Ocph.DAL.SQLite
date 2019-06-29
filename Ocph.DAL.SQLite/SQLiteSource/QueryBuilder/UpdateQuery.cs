@@ -36,7 +36,7 @@ namespace Ocph.DAL.QueryBuilder
 
             var translator = new UpdateTranslator(ref command);
             sb.Append(translator.Translate(fieldUpdate, source));
-            sb.Append(" where ").Append(new WhereTranslator().Translate(where));
+            sb.Append(" where ").Append(new WhereTranslator(entityInfo).Translate(where));
             return sb.ToString();
         }
 

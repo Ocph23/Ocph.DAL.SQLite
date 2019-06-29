@@ -14,8 +14,13 @@ namespace Ocph.DAL.ExpressionHandler
         private int? _skip = null;
         private int? _take = null;
         private string _whereClause = string.Empty;
+        private EntityInfo entityBase;
 
-
+        public WhereTranslator(EntityInfo entity)
+        {
+            this.entityBase = entity;
+        }
+       
 
         public string Translate(Expression expression)
         {
@@ -350,8 +355,9 @@ namespace Ocph.DAL.ExpressionHandler
                 {
                     EntityInfo entity = new EntityInfo(m.Member.ReflectedType);
                     PropertyInfo p = entity.GetPropertyByPropertyName(m.Member.Name);
-              var a=      p.GetType();
-                    sb.Append(entity.TableName).Append(".").Append(entity.GetAttributDbColumn(p));
+                    var a= p.GetType();
+                   
+                    sb.Append(entityBase.TableName).Append(".").Append(entity.GetAttributDbColumn(p));
                 }
 
 

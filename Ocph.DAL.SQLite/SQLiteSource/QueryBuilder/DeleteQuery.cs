@@ -17,7 +17,7 @@ namespace Ocph.DAL.QueryBuilder
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("Delete From ").Append(entityInfo.TableName).Append(" Where ");
-            string whereHanlder = new WhereTranslator().Translate(expression);
+            string whereHanlder = new WhereTranslator(entityInfo).Translate(expression);
             sb.Append(whereHanlder);
             return sb.ToString();
         }

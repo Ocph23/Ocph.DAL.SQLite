@@ -47,8 +47,13 @@ namespace Ocph.DAL
         {
             get
             {
-                TableNameAttribute att = (TableNameAttribute)type.GetCustomAttributes(typeof(TableNameAttribute), true)[0];
-                return att.Name;
+                var result = type.GetCustomAttributes(typeof(TableNameAttribute), true);
+                if(result.Length>0)
+                {
+                    TableNameAttribute att = (TableNameAttribute)result[0];
+                    return att.Name;
+                }
+                return null;
 
             }
         }

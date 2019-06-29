@@ -11,6 +11,7 @@
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)Attributes.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)BaseNotify.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DataConvert.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)DbContext\DataContext.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)DbContext\IDataTable.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)EntityInfo.cs" />
@@ -21,6 +22,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Extentions\QueryExtention.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)IProvierHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)OrmException.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Provider\SQLite\Mapping\ColumnInfo.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Provider\SQLite\Mapping\MappingColumn.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Provider\SQLite\Mapping\MappingCommon.cs" />

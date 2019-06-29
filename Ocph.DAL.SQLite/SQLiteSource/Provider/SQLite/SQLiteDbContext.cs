@@ -11,7 +11,6 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
 using System.Text;
-using vJine.Core.ORM;
 
 namespace Ocph.DAL.Provider.SQLite
 {
@@ -143,7 +142,7 @@ namespace Ocph.DAL.Provider.SQLite
 
             sb.Append("Select * From ").Append(Entity.TableName).Append(" Where ");
 
-            sb.Append(new WhereTranslator().Translate(expression));
+            sb.Append(new WhereTranslator(Entity).Translate(expression));
 
             sb.Append("");
             IDbCommand cmd = connection.CreateCommand();
