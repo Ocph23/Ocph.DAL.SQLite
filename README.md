@@ -11,18 +11,15 @@ Welcome to the OcphDAL for Simple  Mysql Data Access Layer !
 
            namespace Models.Data
                {
-                [TableName("tb_rootword")]
-                public class RootWord
+                [TableName("Player")]
+                public class Player
                  {
                    [PrimaryKey("Id")]
-                   [DbColumn("id_ktdasar")]
+                   [DbColumn("Id")]
                    public int Id? { get; set; }
 
-                  [DbColumn("rootword")]
-                  public string Word { get; set; }
-
-                 [DbColumn("tipe_katadasar")]
-                 public string TypeRootWord { get; set; }
+                  [DbColumn("Name")]
+                  public string Name { get; set; }
                   }
             }
    
@@ -81,14 +78,14 @@ Welcome to the OcphDAL for Simple  Mysql Data Access Layer !
               using(var db = new OcphDbContext())
                {
                   // Get All Data
-                  var rootWords = db.RootWords.Select();
+                  var players = db.Players.Select();
                       //With Linq 
-                      var rootWors = from data in db.RootWords.Select()
+                      var players = from data in db.Players.Select()
                                      select data;
                   // with Clause Where
-                   var roadWords = db.RoadWords.Where(O=>O.TypeRootWord=='Noun');
+                   var roadWords = db.Players.Where(O=>O.Id==1);
                         //With Linq
-                         var rootWors = from data in db.RootWords.Select() where data.TypeRootWord equal 'Noun'
+                         var rootWors = from data in db.Players.Select() where data.Id equal 1
                                      select data;
 
                   // You Can Join Like Linq
@@ -101,8 +98,8 @@ Welcome to the OcphDAL for Simple  Mysql Data Access Layer !
                  
                using(var db = new OcphDbContext())
                {
-                    var saved = db.RootWords.Insert(rootWord);
-                    var Id = db.RootWords.InsertWithGetLastId(rootWord);
+                    var saved = db.Players.Insert(model);
+                    var Id = db.RootWords.InsertWithGetLastId(model);
                  }
 
                 //With Transaction
@@ -111,7 +108,7 @@ Welcome to the OcphDAL for Simple  Mysql Data Access Layer !
                      var trans= db.Connection.BeginTransaction();
                    try
                      {
-                           var Id = db.RootWords.InsertWithGetLastId(rootWord);
+                           var Id = db.Players.InsertWithGetLastId(model);
                            var item1= new Item();
                            item1.Id=Id;
                             var saved = db.Items.Insert(item1);
@@ -128,7 +125,7 @@ Welcome to the OcphDAL for Simple  Mysql Data Access Layer !
 
                using(var db = new OcphDbContext())
                {
-                    var isDeleted = db.RootWords.Delete(O=>O.Id==1);
+                    var isDeleted = db.Players.Delete(O=>O.Id==1);
                  
                  }
 
@@ -138,7 +135,7 @@ Welcome to the OcphDAL for Simple  Mysql Data Access Layer !
 
                using(var db = new OcphDbContext())
                {
-                    var isUpdated = db.RootWords.Update(O=> new{O.Word},rootWordToUpdate,O=>O.Id==rootWordToUpdate );
+                    var isUpdated = db.Players.Update(O=> new{O.Word},playerModel,O=>O.Id==playerModelId );
                  
                  }
 
