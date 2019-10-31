@@ -1,6 +1,6 @@
 # Ocph.DAL.SQLite
 
-Welcome to the OcphDAL for Simple  Mysql Data Access Layer !
+Welcome to the OcphDAL for Simple  SQLite Data Access Layer !
 1. Install From Nuget
    
    https://www.nuget.org/packages/Ocph.DAL.SQLite/
